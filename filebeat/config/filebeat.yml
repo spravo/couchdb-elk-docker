@@ -1,0 +1,9 @@
+prospectors:
+    -
+        paths:
+            - "/var/log/couchdb/*.log"
+        document_type: log
+output:
+    logstash:
+        hosts: ["elk:5044"]
+        timeout: 15
