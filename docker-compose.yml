@@ -1,0 +1,8 @@
+couchdb:
+    image: klaemo/couchdb:1.6
+    ports:
+        - "5987:5984"
+    volumes:
+        - ./couchdb/config:/usr/local/etc/couchdb/local.d
+        - ./couchdb/log:/usr/local/var/log/couchdb
+        - ./couchdb/data:/usr/local/var/lib/couchdb
