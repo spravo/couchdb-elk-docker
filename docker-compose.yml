@@ -13,8 +13,9 @@ services:
     filebeat:
         image: olinicola/filebeat:1.2.3
         volumes:
-            - ./couchdb/log/couch.log:/var/log/couchdb # log from couchdb
-            - ./filebeat/config/filebeat.yml:/etc/filebeat/filebeat.yml
+            - ./couchdb/log/couch.log:/var/log/couchdb/couch.log            # set logs from couchdb
+            - ./filebeat/config/filebeat.yml:/etc/filebeat/filebeat.yml     # set settings
+            - ./filebeat/tmp:/tmp/filebeat                                  # get tmp filebeat files
         links:
             - "elk"
 

@@ -1,9 +1,11 @@
-prospectors:
-    -
-        paths:
-            - "/var/log/couchdb/*.log"
-        document_type: log
+filebeat:
+  prospectors:
+    - input_type: log
+      paths:
+        - "/var/log/couchdb/couch.log"
+
 output:
-    logstash:
-        hosts: ["elk:5044"]
-        timeout: 15
+  logstash:
+    hosts: [ "elk:5044" ]
+  file:
+    path: "/tmp/filebeat"

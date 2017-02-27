@@ -1,2 +1,6 @@
-couchdb/**/**
-!couchdb/config/local.ini
+# Couchdb
+couchdb/data/**
+couchdb/log/**
+
+# Filebeat
+filebeat/tmp/**
